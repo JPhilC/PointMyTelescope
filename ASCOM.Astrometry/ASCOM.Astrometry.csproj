@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Kepler\**" />
+    <EmbeddedResource Remove="Kepler\**" />
+    <None Remove="Kepler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AstroUtils.cs" />
+    <Compile Remove="Interfaces.cs" />
+    <Compile Remove="NOVAS2.cs" />
+    <Compile Remove="NOVAS2COM.cs" />
+    <Compile Remove="NOVAS3.cs" />
+    <Compile Remove="NOVAS31.cs" />
+    <Compile Remove="NOVASCOM\Ephemeris.cs" />
+    <Compile Remove="NOVASCOM\NOVASCOM.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NOVASCOM\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASCOM.Utilities\ASCOM.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Sofa12-64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sofa12.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
